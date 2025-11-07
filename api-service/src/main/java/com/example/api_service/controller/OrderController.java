@@ -26,7 +26,6 @@ import lombok.RequiredArgsConstructor;
 public class OrderController 
 {
     private final OrderService orderService;
-    String foo = "hello";
     @GetMapping("/orders/user-orders/{userId}")
     public ResponseEntity<List<OrderDto>> getUserOrders(@PathVariable("userId") String userId)
     {
@@ -50,7 +49,6 @@ public class OrderController
     @DeleteMapping("orders/{id}")
     public ResponseEntity<Void> deleteOrder(@PathVariable("id") int id)
     {
-        String foo2 = "hello";
         orderService.deleteOrder(id);
         return ResponseEntity.ok().build();
     }
